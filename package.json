@@ -17,7 +17,8 @@
     "url": "https://github.com/pixbi/bitbucket-to-github-style/issues"
   },
   "dependencies": {
-    "coffee-script": "~1.6.3"
+    "coffee-script": "~1.6.3",
+    "express": "~3.4.8"
   },
   "devDependencies": {
     "chai": "~1.8.1",
