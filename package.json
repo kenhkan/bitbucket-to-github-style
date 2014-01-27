@@ -1,0 +1,30 @@
+{
+  "name": "bitbucket-to-github-style",
+  "version": "0.0.0",
+  "description": "Redirect Bitbucket-style URL to GitHub-style URL",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "node_modules/.bin/grunt ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixbi/bitbucket-to-github-style"
+  },
+  "keywords": [],
+  "author": "Kenneth Kan <ken@pixbi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixbi/bitbucket-to-github-style/issues"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.1",
+    "grunt-mocha-cli": "~1.1.0",
+    "grunt-cli": "~0.1.9",
+    "grunt-coffeelint": "0.0.8"
+  }
+}
