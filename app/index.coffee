@@ -1,9 +1,10 @@
 app = do require 'express'
+request = require 'request'
 
 PORT = process.env.PORT or 5000
 HOST = process.env.HOST or 'https://bitbucket.org'
 
-app.all '*', (req, res) ->
+app.get '*', (req, res) ->
   # Convert path to array
   segments = req.url.split '/'
   # Insert `raw` into the URL to make GitHub-style compatible, but only if it
@@ -13,8 +14,10 @@ app.all '*', (req, res) ->
   # Reconstruct the URL
   url = HOST + segments.join '/'
 
-  # Send a request to Bitbucket
-  res.redirect 301, url
+  # Stream request to Bitbucket
+  bitbucket = request.get(url)
+  req.pipe bitbucket
+  bitbucket.pipe res
 
 app.listen PORT
 console.log "Listening on port #{PORT}"
