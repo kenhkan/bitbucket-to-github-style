@@ -19,5 +19,13 @@ app.get '*', (req, res) ->
   req.pipe bitbucket
   bitbucket.pipe res
 
+  # End the connection
+  req.on 'end', ->
+    console.log "*** end: #{url}"
+    req.unpipe()
+  req.on 'close', ->
+    console.log "*** close: #{url}"
+    req.unpipe()
+
 app.listen PORT
 console.log "Listening on port #{PORT}"
