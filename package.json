@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Redirect Bitbucket-style URL to GitHub-style URL",
   "main": "index.coffee",
+  "engines": {
+    "node": "~0.10.25"
+  },
   "scripts": {
     "test": "node_modules/.bin/grunt ci"
   },
