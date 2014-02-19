@@ -19,5 +19,10 @@ app.get '*', (req, res) ->
   req.pipe bitbucket
   bitbucket.pipe res
 
+  # Handle errors
+  bitbucket.on 'error', ->
+    bitbucket.end()
+    res.end()
+
 app.listen PORT
 console.log "Listening on port #{PORT}"
